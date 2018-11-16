@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Baby_Project.Models.Persona>
+
+<p>
+    @Html.ActionLink("Añadir Persona", "AddPersona")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona_Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona_Apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona_Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona_FecNac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona_Sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona_Celular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona_Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona_Tipo_ID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona_Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona_Apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona_Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona_FecNac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona_Sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona_Celular)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona_Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona_Tipo_ID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditPersona", new { id=item.Persona_Id }) |
+            @Html.ActionLink("Delete", "DeletePersona", 
+                    new { id=item.Persona_Id },
+                    new { onclick = "return confirm('¿Estas seguro que quieres borrar este registro?');"
+                        })
+        </td>
+    </tr>
+}
+
+</table>

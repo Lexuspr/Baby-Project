@@ -8,7 +8,7 @@ namespace Baby_Project.Models
 {
     public class Persona
     {
-        [Display(Name = "Id")]
+        [Display(Name = "ID")]
         public int Persona_Id { get; set; }
         
         [Required(ErrorMessage = "Nombre obligatorio.")]
@@ -24,8 +24,9 @@ namespace Baby_Project.Models
         public string Persona_FecNac { get; set; }
 
         [Required(ErrorMessage = "Sexo obligatorio")]
-        public char Persona_Sexo { get; set; }
+        public string Persona_Sexo { get; set; }
 
+        [Required(ErrorMessage = "Celular obligatorio")]
         public string Persona_Celular { get; set; }
 
         [Required(ErrorMessage = "Username obligatorio.")]
