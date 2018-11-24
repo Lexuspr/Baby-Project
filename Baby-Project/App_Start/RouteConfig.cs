@@ -16,7 +16,7 @@ namespace Baby_Project
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Persona", action = "AddPersona", id = UrlParameter.Optional }
+                defaults: new { controller = "Persona", action = "Login", id = UrlParameter.Optional }
             );
         }
     }

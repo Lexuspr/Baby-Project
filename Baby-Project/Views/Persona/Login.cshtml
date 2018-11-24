@@ -1,0 +1,32 @@
+﻿@model Baby_Project.Models.Login
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="container">
+        <h1 class="form-heading">Formulario Login</h1>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="login-form">
+            <div class="main-div">
+                <div class="panel">
+                    <h2>Admin Login</h2>
+                    <p>Porfavor ingresa tu usuario y contraseña</p>
+                </div>
+                <form id="Login">
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="forgot">
+                        <a href="reset.html">Olvidaste la contraseña?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+

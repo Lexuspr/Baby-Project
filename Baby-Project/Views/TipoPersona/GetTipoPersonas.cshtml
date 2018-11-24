@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Baby_Project.Models.TipoPersona>
+
+<p>
+    @Html.ActionLink("Nuevo Tipo Persona", "AddTipoPersona")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoPersona_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoPersona_Desc)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoPersona_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoPersona_Desc)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditTipoPersona", new { id = item.TipoPersona_Id }) |
+                @Html.ActionLink("Delete", "DeleteTipoPersona",
+                        new {  id=item.TipoPersona_Id  },
+                        new { onclick = "return confirm('¿Estas seguro que quieres eliminar este registro?');"})
+            </td>
+        </tr>
+    }
+</table>
+@Html.ActionLink("Volver al Index", "Index", "Persona")

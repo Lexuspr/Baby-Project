@@ -1,0 +1,26 @@
+﻿<div class="container">
+    <ul class="nav nav-pills nav-stacked  col-md-2">
+        <li class="active"><a href="#tab_a" data-toggle="pill">Mantenimiento</a></li>
+        <li><a href="#tab_b" data-toggle="pill">Procesos</a></li>
+        <li>@Html.ActionLink("Salir", "Login", "Persona")</li>
+
+    </ul>
+    <div class="tab-content col-md-10 line-h">
+        <div class="tab-pane active" id="tab_a">
+            <h4>Mantenimiento</h4>
+            <hr>
+            <ul>
+                <li>@Html.ActionLink("Persona", "GetPersonas", "Persona")</li>
+                <li>@Html.ActionLink("TipoPersona", "GetTipoPersonas", "TipoPersona")</li>
+            </ul>
+        </div>
+        <div class="tab-pane active" id="tab_b">
+            <h4>Procesos</h4>
+            <hr>
+            <ul>
+                <li><a href="">Registrar Nacimiento</a></li>
+                <li><a href="">Registrar Cita</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
