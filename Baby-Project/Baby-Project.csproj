@@ -111,16 +111,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\SalidaController.cs" />
+    <Compile Include="Controllers\MadreController.cs" />
+    <Compile Include="Controllers\InfanteController.cs" />
+    <Compile Include="Controllers\AsistenteController.cs" />
     <Compile Include="Controllers\PersonaController.cs" />
     <Compile Include="Controllers\TipoPersonaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Asistente.cs" />
+    <Compile Include="Models\Infante.cs" />
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Madre.cs" />
     <Compile Include="Models\Persona.cs" />
+    <Compile Include="Models\Salida.cs" />
     <Compile Include="Models\TipoPersona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AsistenteRepository.cs" />
+    <Compile Include="Repository\InfanteRepository.cs" />
+    <Compile Include="Repository\MadreRepository.cs" />
     <Compile Include="Repository\PersonaRepository.cs" />
+    <Compile Include="Repository\SalidaRepository.cs" />
     <Compile Include="Repository\TipoPersonaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
