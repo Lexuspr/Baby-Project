@@ -69,7 +69,7 @@ namespace Baby_Project.Repository
             return result;
         }
 
-        public bool UpdateInfante(Infante obj)
+        public bool UpdateSalida(Salida obj)
         {
             connection();
             SqlCommand com = new SqlCommand("ModificarInfante", con);

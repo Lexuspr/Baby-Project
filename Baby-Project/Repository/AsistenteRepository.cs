@@ -39,7 +39,7 @@ namespace Baby_Project.Repository
                 AsisList.Add( 
                     new Asistente
                     {
-                        Asistente_Id = Convert.ToInt32(dr["asistente_ID"]),
+                        Asistente_ID = Convert.ToInt32(dr["asistente_ID"]),
                         Asistente_Nombre = Convert.ToString(dr["asistente_Nombre"])
                     }
                 );

@@ -11,6 +11,7 @@ namespace Baby_Project.Controllers
 {
     public class MadreController : Controller
     {
+        //GET
         public ActionResult GetMadres()
         {
             MadreRepository MadRepo = new MadreRepository();
@@ -19,12 +20,13 @@ namespace Baby_Project.Controllers
 
             return View(MadRepo.ListarMadres());
         }
-
+        //GET
         public ActionResult AddMadre()
         {
             return View();
         }
 
+        //POST
         [HttpPost]
         public ActionResult AddMadre(Madre mad)
         {
@@ -46,6 +48,7 @@ namespace Baby_Project.Controllers
             }
         }
 
+        //GET
         public ActionResult EditMadre(int? id)
         {
             if (id == null)
@@ -53,7 +56,7 @@ namespace Baby_Project.Controllers
 
             MadreRepository MadRepo = new MadreRepository();
             Madre result = MadRepo.ListarMadres()
-                    .Find(Mad => Mad.Madre_ID == id);
+                    .Find(Mad => Mad.Madre_Id == id);
 
             if (result == null)
                 return HttpNotFound();

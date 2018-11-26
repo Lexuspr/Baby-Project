@@ -18,7 +18,7 @@ namespace Baby_Project.Models
         public string Madre_Apellido { get; set; } 
 
         [Required(ErrorMessage = "Fecha de Nacimiento obligatorio.")]
-        public int Madre_FecNac { get; set; }
+        public DateTime Madre_FecNac { get; set; }
 
         [Required(ErrorMessage = "Tipo de Sangre obligatorio.")]
         public string Madre_Sangre { get; set; }

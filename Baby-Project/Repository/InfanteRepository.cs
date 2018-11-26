@@ -39,7 +39,7 @@ namespace Baby_Project.Repository
                 InfantList.Add(
                     new Infante
                     {
-                        Infante_Historial = Convert.ToInt32(dr["infante_NHC"]),
+                        Infante_Historial = Convert.ToString(dr["infante_NHC"]),
                         Infante_Nombre = Convert.ToString(dr["infante_Nom"]),
                         Infante_Apellido = Convert.ToString(dr["infante_Ape"]),
                         Infante_FecNac = Convert.ToDateTime(dr["infante_FecNac"]),
