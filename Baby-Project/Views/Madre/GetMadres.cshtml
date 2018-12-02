@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Baby_Project.Models.Madre>
+
+    <p>
+        @Html.ActionLink("Añadir Madre", "AddMadre")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Madre_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Madre_Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Madre_Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Madre_FecNac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Madre_Sangre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Madre_Factor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Madre_Enfermedad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Madre_Tipo_ID)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Madre_Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Madre_Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Madre_Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Madre_FecNac)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Madre_Sangre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Madre_Factor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Madre_Enfermedad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Madre_Tipo_ID)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditMadre", new { id = item.Madre_Id }) |
+                    @Html.ActionLink("Delete", "DeleteMadre",
+                            new { id=item.Madre_Id },
+                            new { onclick = "return confirm('¿Estas seguro que quieres borrar este registro?');"
+                                })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    @Html.ActionLink("Volver al Index", "Index", "")

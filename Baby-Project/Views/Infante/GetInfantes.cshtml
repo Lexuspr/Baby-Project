@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Baby_Project.Models.Infante>
+
+<p>
+    @Html.ActionLink("Añadir Infantes", "AddInfante")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Infante_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Infante_Historial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Infante_Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Infante_Apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Infante_FecNac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Infante_Sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Infante_Lugar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Infante_Exa_Gen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Infante_Exa_Fis)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Infante_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Infante_Historial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Infante_Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Infante_Apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Infante_FecNac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Infante_Sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Infante_Lugar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Infante_Exa_Gen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Infante_Exa_Fis)
+        </th>
+        <td>
+            @Html.ActionLink("Edit", "EditInfante", new { id = item.Infante_ID }) |
+            @Html.ActionLink("Delete", "DeleteInfante",
+                    new { id=item.Infante_ID },
+                    new { onclick = "return confirm('¿Estas seguro que quieres borrar este registro?');"
+                        })
+        </td>
+    </tr>
+    }
+
+</table>
+
+@Html.ActionLink("Volver al Index", "Index", "Persona")

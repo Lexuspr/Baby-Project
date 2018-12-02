@@ -3,77 +3,78 @@
 <p>
     @Html.ActionLink("Añadir Persona", "AddPersona")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Persona_Id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Persona_Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Persona_Apellido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Persona_Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Persona_FecNac)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Persona_Sexo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Persona_Celular)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Persona_Username)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Persona_Tipo_ID)
-        </th>
-        <th></th>
-    </tr>
+<table class="table table-bordered table-dark" align="center">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Date</th>
+            <th scope="col">Sex</th>
+            <th scope="col">Movi</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Type Id</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Persona_Id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Persona_Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Persona_Apellido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Persona_Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Persona_FecNac)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Persona_Sexo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Persona_Celular)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Persona_Username)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Persona_Tipo_ID)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "EditPersona", new { id=item.Persona_Id }) |
-            @Html.ActionLink("Delete", "DeletePersona", 
-                    new { id=item.Persona_Id },
-                    new { onclick = "return confirm('¿Estas seguro que quieres borrar este registro?');"
-                        })
-        </td>
-    </tr>
-}
+    <tbody>
+        @foreach (var item in Model)
+        {
 
-</table>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona_Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona_Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona_Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona_Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona_FecNac)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona_Sexo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona_Celular)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona_Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Persona_Tipo_ID)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-warning" >
+                        @Html.ActionLink("Edit", "EditPersona", new { id = item.Persona_Id })
+
+                    </button>
+
+                    <button type="button" class="btn btn-danger">
+                        @Html.ActionLink("Delete", "DeletePersona",
+                           new { id=item.Persona_Id },
+                           new { onclick = "return confirm('¿Estas seguro que quieres borrar este registro?');"
+                               })
+
+                    </button>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10" style="color:green">
+                            @ViewBag.Message
+                        </div>
+                    </div>
+                </td>
+            </tr>
+      
+    }
+        </tbody>
+    </table>
 
 @Html.ActionLink("Volver al Index","Index","Persona")

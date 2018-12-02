@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Baby_Project.Models.Asistente>
+
+<p>
+    @Html.ActionLink("Añadir Asistente", "AddAsistente")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Asistente_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Asistente_Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <th>
+            @Html.DisplayFor(modelItem => item.Asistente_ID)
+        </th>
+        <th>
+            @Html.DisplayFor(modelItem => item.Asistente_Nombre)
+        </th>
+        <td>
+            @Html.ActionLink("Edit", "EditAsistente", new { id = item.Asistente_ID }) |
+            @Html.ActionLink("Delete", "DeleteAsistente",
+                    new { id=item.Asistente_ID },
+                    new { onclick = "return confirm('¿Estas seguro que quieres borrar este registro?');"
+                        })
+        </td>
+    </tr>
+    }
+
+</table>
+
+@Html.ActionLink("Volver al Index", "Index", "Persona")

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Baby_Project.Models.Salida>
+
+
+<p>
+    @Html.ActionLink("Añadir Salida", "AddSalida")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Salida_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salida_Obs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salida_Destino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salida_NumCnv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salida_Fec)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Asistente_ID)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Salida_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salida_Obs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salida_Destino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salida_NumCnv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salida_Fec)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Asistente_ID)
+        </th>
+        <td>
+            @Html.ActionLink("Edit", "EditSalida", new { id = item.Salida_ID }) |
+            @Html.ActionLink("Delete", "DeleteSalida",
+                    new { id=item.Salida_ID },
+                    new { onclick = "return confirm('¿Estas seguro que quieres borrar este registro?');"
+                        })
+        </td>
+    </tr>
+    }
+
+</table>
+
+@Html.ActionLink("Volver al Index", "Index", "Persona")
+

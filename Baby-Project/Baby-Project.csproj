@@ -97,6 +97,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="imagenes\fondoFormularios.jpg" />
+    <Content Include="imagenes\IDMB.png" />
+    <Content Include="imagenes\panda.jpg" />
+    <Content Include="imagenes\tiger.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -149,6 +153,19 @@
     <Content Include="Views\TipoPersona\EditTipoPersona.cshtml" />
     <Content Include="Views\Persona\Login.cshtml" />
     <Content Include="Views\Persona\Index.cshtml" />
+    <Content Include="Views\Madre\AddMadre.cshtml" />
+    <Content Include="Views\Madre\Index.cshtml" />
+    <Content Include="Views\Madre\EditMadre.cshtml" />
+    <Content Include="Views\Madre\GetMadres.cshtml" />
+    <Content Include="Views\Asistente\GetAsistentes.cshtml" />
+    <Content Include="Views\Asistente\AddAsistente.cshtml" />
+    <Content Include="Views\Asistente\EditAsistente.cshtml" />
+    <Content Include="Views\Infante\GetInfantes.cshtml" />
+    <Content Include="Views\Infante\AddInfante.cshtml" />
+    <Content Include="Views\Infante\EditInfante.cshtml" />
+    <Content Include="Views\Salida\GetSalidas.cshtml" />
+    <Content Include="Views\Salida\AddSalida.cshtml" />
+    <Content Include="Views\Salida\EditSalida.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
