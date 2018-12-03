@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Configuration; //Importar esto
 using Baby_Project.Models; // Importar esto tambien
 using System.Data; // SIp
+using System.Security.Cryptography;
 
 namespace Baby_Project.Repository
 {
@@ -118,16 +119,43 @@ namespace Baby_Project.Repository
 
         public bool Login(string usr, string pwd)
         {
+            bool result = false;
             connection();
-            SqlCommand com = new SqlCommand("LoginPersona", con);
+            SqlCommand com = new SqlCommand("GetHashedPwd", con);
             com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@Per_Usr", usr);
-            com.Parameters.AddWithValue("@Per_Pwd", pwd);
+            com.Parameters.AddWithValue("@Per_usr", usr);
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataTable dt = new DataTable();
             con.Open();
-            int i = Convert.ToInt32(com.ExecuteScalar().ToString());
+            da.Fill(dt);
             con.Close();
-            bool result = i >= 1 ? true : false;
+
+            if (dt.Rows.Count == 1)
+            {
+                string savedSaltStr = dt.Rows[0][0].ToString();
+                byte[] usr_hash = Convert.FromBase64String(savedSaltStr);
+                byte[] salt = new byte[16];
+                Array.Copy(usr_hash, 0, salt, 0, 16);
+                var pbkdf2 = new Rfc2898DeriveBytes(pwd, salt, 10000);
+                byte[] hash = pbkdf2.GetBytes(20);
+
+                result = compareHash(hash, usr_hash);
+            }
+
             return result;
+        }
+
+        private bool compareHash(byte[] test_hash, byte[] usr_hash)
+        {
+            bool res = true;
+            for (int i=0; i<20; i++)
+            {
+                if (usr_hash[i+16] != test_hash[i])
+                {
+                    res = false;
+                }
+            }
+            return res;
         }
 
         //Terminaste? .... Repite con los demas

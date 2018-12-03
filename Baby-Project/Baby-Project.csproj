@@ -16,7 +16,7 @@
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44319</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -125,6 +125,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Asistente.cs" />
+    <Compile Include="Models\CheckAuthorization.cs" />
     <Compile Include="Models\Infante.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Madre.cs" />
@@ -191,7 +192,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>61868</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:61868/</IISUrl>
+          <IISUrl>https://localhost:44319/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

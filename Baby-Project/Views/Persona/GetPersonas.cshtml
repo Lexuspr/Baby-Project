@@ -1,21 +1,21 @@
 ﻿@model IEnumerable<Baby_Project.Models.Persona>
 
 <p>
-    @Html.ActionLink("Añadir Persona", "AddPersona")
+    @Html.ActionLink("Añadir Persona", "AddPersona", null, htmlAttributes: new { @style = "color:#ffffff" })
 </p>
-<table class="table table-bordered table-dark" align="center">
-    <thead class="thead-dark">
+<table class="table table-responsive" align="center">
+    <thead class="">
         <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Date</th>
-            <th scope="col">Sex</th>
-            <th scope="col">Movi</th>
-            <th scope="col">User Name</th>
-            <th scope="col">Type Id</th>
-            <th scope="col">Actions</th>
+            <th scope="col" style="color:azure">ID</th>
+            <th scope="col" style="color:azure">Nombre</th>
+            <th scope="col" style="color:azure">Apellido</th>
+            <th scope="col" style="color:azure">Email</th>
+            <th scope="col" style="color:azure">Fecha Nacimiento</th>
+            <th scope="col" style="color:azure">Sexo</th>
+            <th scope="col" style="color:azure">Celular</th>
+            <th scope="col" style="color:azure">Username</th>
+            <th scope="col" style="color:azure">Tipo de Usuario</th>
+            <th scope="col" style="color:azure">Acciones</th>
         </tr>
     </thead>
 
@@ -23,7 +23,7 @@
         @foreach (var item in Model)
         {
 
-            <tr>
+            <tr style="color:azure">
                 <td>
                     @Html.DisplayFor(modelItem => item.Persona_Id)
                 </td>
@@ -77,4 +77,4 @@
         </tbody>
     </table>
 
-@Html.ActionLink("Volver al Index","Index","Persona")
+@Html.ActionLink("Volver al Index","Index","Persona", null, htmlAttributes: new { @style = "color:#ffffff" })

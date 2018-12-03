@@ -13,5 +13,9 @@ namespace Baby_Project.Models
 
         [Required(ErrorMessage = "Password obligatorio.")]
         public string password { get; set; }
+
+        public string ReturnURL { get; set; }
+
+        public bool isRemember { get; set; }
     }
 }
